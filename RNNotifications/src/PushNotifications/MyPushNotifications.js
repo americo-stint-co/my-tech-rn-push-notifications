@@ -7,7 +7,7 @@ class MyPushNotifications extends Component {
     Notifications.registerRemoteNotifications();
 
     Notifications.events().registerNotificationReceivedForeground(
-      (notification: Notification, completion) => {
+      (notification, completion) => {
         console.log(
           `Notification received in foreground: ${notification.title} : ${notification.body}`,
         );
@@ -16,7 +16,7 @@ class MyPushNotifications extends Component {
     );
 
     Notifications.events().registerNotificationOpened(
-      (notification: Notification, completion) => {
+      (notification, completion) => {
         console.log(`Notification opened: ${notification.payload}`);
         completion();
       },

@@ -40,12 +40,13 @@ class App extends Component {
 
     Notifications.requestPermissions();
 
-    Notifications.ios.checkPermissions().then((currentPermissions) => {
+    Notifications.ios.checkPermissions().then(currentPermissions => {
       console.log('Badges enabled: ' + !!currentPermissions.badge);
       console.log('Sounds enabled: ' + !!currentPermissions.sound);
       console.log('Alerts enabled: ' + !!currentPermissions.alert);
-  });
+    });
   }
+  
   render() {
     return (
       <>
