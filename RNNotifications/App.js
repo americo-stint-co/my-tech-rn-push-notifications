@@ -27,25 +27,25 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 class App extends Component {
-  constructor() {
-    Notifications.events().registerRemoteNotificationsRegistered(event => {
-      // TODO: Send the token to my server so it could send back push notifications...
-      console.log('Device Token Received', event.deviceToken);
-    });
-    Notifications.events().registerRemoteNotificationsRegistrationFailed(
-      event => {
-        console.error(event);
-      },
-    );
+  // constructor() {
+  //   Notifications.events().registerRemoteNotificationsRegistered(event => {
+  //     // TODO: Send the token to my server so it could send back push notifications...
+  //     console.log('Device Token Received', event.deviceToken);
+  //   });
+  //   Notifications.events().registerRemoteNotificationsRegistrationFailed(
+  //     event => {
+  //       console.error(event);
+  //     },
+  //   );
 
-    Notifications.requestPermissions();
+  //   Notifications.requestPermissions();
 
-    Notifications.ios.checkPermissions().then(currentPermissions => {
-      console.log('Badges enabled: ' + !!currentPermissions.badge);
-      console.log('Sounds enabled: ' + !!currentPermissions.sound);
-      console.log('Alerts enabled: ' + !!currentPermissions.alert);
-    });
-  }
+  //   Notifications.ios.checkPermissions().then(currentPermissions => {
+  //     console.log('Badges enabled: ' + !!currentPermissions.badge);
+  //     console.log('Sounds enabled: ' + !!currentPermissions.sound);
+  //     console.log('Alerts enabled: ' + !!currentPermissions.alert);
+  //   });
+  // }
   
   render() {
     return (
